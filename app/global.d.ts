@@ -1,15 +1,13 @@
 import {} from 'hono'
 
-type Head = {
-  title?: string
-}
+import "@hono/react-renderer";
 
-declare module 'hono' {
+declare module "@hono/react-renderer" {
   interface Env {
     Variables: {}
     Bindings: {}
   }
-  interface ContextRenderer {
-    (content: string | Promise<string>, head?: Head): Response | Promise<Response>
+  interface Props {
+    title?: string;
   }
 }

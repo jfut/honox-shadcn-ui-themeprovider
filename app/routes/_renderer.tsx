@@ -1,19 +1,51 @@
-import { Style } from 'hono/css'
-import { jsxRenderer } from 'hono/jsx-renderer'
-import { Script } from 'honox/server'
+import { reactRenderer } from "@hono/react-renderer";
+import { useRequestContext } from "@hono/react-renderer";
+import type { FC, PropsWithChildren } from "react";
 
-export default jsxRenderer(({ children, title }) => {
+import { cn } from "@/lib/utils";
+
+import { ThemeProvider } from "@/islands/ThemeProvider";
+
+const HasIslands: FC<PropsWithChildren> = ({ children }) => {
+  const IMPORTING_ISLANDS_ID = "__importing_islands" as const;
+  const c = useRequestContext();
+  return <>{c.get(IMPORTING_ISLANDS_ID) ? children : <></>}</>;
+};
+
+export default reactRenderer(({ children, title }) => {
   return (
-    <html lang="en">
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <Script src="/app/client.ts" async />
-        <Style />
-      </head>
-      <body>{children}</body>
-    </html>
-  )
-})
+    <>
+      {/* <!DOCTYPE html> */}
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <meta charSet="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          {import.meta.env.PROD ? (
+            <>
+              <HasIslands>
+                <script type="module" src="/static/client.js" />
+              </HasIslands>
+              <link href="/static/assets/tailwind.css" rel="stylesheet" />
+            </>
+          ) : (
+            <>
+              <script type="module" src="/app/client.ts" />
+              <link href="/app/tailwind.css" rel="stylesheet" />
+            </>
+          )}
+          {title ? <title>{title}</title> : ""}
+        </head>
+        <body
+          className={cn("min-h-screen bg-background font-sans antialiased")}
+        >
+          <ThemeProvider defaultTheme="light" storageKey="hono-ui-theme">
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
+  );
+});

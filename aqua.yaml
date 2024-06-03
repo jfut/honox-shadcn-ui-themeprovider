@@ -1,0 +1,15 @@
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+# https://aquaproj.github.io/docs/reference/checksum/
+checksum:
+  enabled: true
+  require_checksum: false
+# https://github.com/aquaproj/aqua-registry
+registries:
+- type: standard
+  ref: v4.188.0 # renovate: depName=aquaproj/aqua-registry
+# aqua update-checksum -a --deep --prune
+packages:
+- name: oven-sh/bun@bun-v1.1.12
+- name: biomejs/biome@cli/v1.7.3

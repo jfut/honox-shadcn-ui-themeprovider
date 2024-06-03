@@ -1,0 +1,44 @@
+{
+  "checksums": [
+    {
+      "id": "github_release/github.com/biomejs/biome/cli/v1.7.3/biome-darwin-arm64",
+      "checksum": "6C9FF5223173B71AAA12693451369C287E8F4E5625803A9CEEFD815A9BB8A0C6",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/biomejs/biome/cli/v1.7.3/biome-darwin-x64",
+      "checksum": "97541273EC677C3DC90CD43989A10F1437E9CA61C8ECC1340706A56B1490CA77",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/biomejs/biome/cli/v1.7.3/biome-linux-arm64",
+      "checksum": "F6F2EFBA2A3CCDF3DC889894BFC14137D3BD17601A1D1F5D39DE5041DBBDFB08",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/biomejs/biome/cli/v1.7.3/biome-linux-x64",
+      "checksum": "9ED0D7EECBBF955BEAABDAD11B794E37619F2A0FA1AE12DCCF5A979EA8B863B8",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.1.12/bun-darwin-aarch64.zip",
+      "checksum": "57611B18175679D502276A0E19455D4AEE680FDD3A385CEDA9A74AE6A9C4161E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.1.12/bun-darwin-x64.zip",
+      "checksum": "70374E64C021ECEC40C72F2C9747C1B80D36E10181F3D657F08D9161E3E2C070",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.1.12/bun-linux-x64.zip",
+      "checksum": "FA6FAD58BFABDC0345B951B08900D15C3CE5D614C04487D580E82FCD983E0C89",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.188.0/registry.yaml",
+      "checksum": "B4E35F23E4AF92AD25EEEE845EC9F988456E8830E1AD3AC09CA4A1AEA50B7062E938828A568E0C9AF0C5B983CB20B6E7FE58221CEDD8644947AF3788190B0FB8",
+      "algorithm": "sha512"
+    }
+  ]
+}
